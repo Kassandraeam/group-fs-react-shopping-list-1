@@ -1,9 +1,9 @@
-function ShoppingList() {
+function ShoppingList (){
     return(
         <>
-            <button>Reset</button>
-            <h2>ShopClearping ton>List</h2>
-            <button></button>
+        <h2>Shopping List</h2>
+        <button>Reset</button>
+        <button>Clear</button>
         </>
     )
 }
