@@ -13,7 +13,7 @@ function App() {
     let [shoppingList, setShoppingList] = useState([]);
 
     useEffect(() => {
-        getGuests()
+        getShoppingList()
     }, [])
 
     const getShoppingList = () => {
