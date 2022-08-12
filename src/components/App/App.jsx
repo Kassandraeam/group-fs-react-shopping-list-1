@@ -4,6 +4,8 @@ import axios from 'axios'
 import Header from '../Header/Header.jsx'
 import './App.css';
 import ShoppingForm from '../ShoppingForm/ShoppingForm.jsx';
+import ShoppingItem from '../ShoppingItem/ShoppingItem.jsx';
+import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 
 
 
@@ -36,7 +38,8 @@ function App() {
             <Header />
             <ShoppingForm getShoppingList={getShoppingList}/>
             <main>
-                <p>Under Construction...</p>
+                <ShoppingList />
+                <ShoppingItem shoppingList={shoppingList}/>
             </main>
         </div>
     );
