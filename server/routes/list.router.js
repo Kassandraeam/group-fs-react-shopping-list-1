@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express.Router();
 const pool = require('../modules/pool');
+//const router = express.Router();
 
 // Setup a GET route to get all the guest from the database
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
     // When you fetch all things in these GET routes, strongly encourage ORDER BY
     // so that things always come back in a consistent order 
     const sqlText = `SELECT * FROM shoppingList ORDER BY item;`;
@@ -22,7 +23,7 @@ router.get('/', (req, res) => {
 app.post('/', (req, res) => {
     // const here
     const newShoppingItem = [req.body.item, req.body.quantity, req.body.unit]
-    const queryText = `INSERT INTO shoppingList VALUES ($1, $2, $3)`;
+    const queryText = `INSERT INTO shoppinglist VALUES ($1, $2, $3)`;
 
     pool.query(queryText, newShoppingItem)
         .then((result) => {
@@ -33,4 +34,4 @@ app.post('/', (req, res) => {
         })
 })
 
-modules.export = app;
+module.exports = app;

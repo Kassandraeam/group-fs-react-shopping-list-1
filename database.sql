@@ -4,14 +4,14 @@
 -- DB NAME!
 -- fs-react-shopping
 
-CREATE TABLE "shoppingList" (
+CREATE TABLE "shoppinglist" (
 	"id" SERIAL PRIMARY KEY,
 	"item" VARCHAR (80) NOT NULL,
 	"quantity" INT NOT NULL,
 	"unit" VARCHAR (20)
 );
 
-INSERT INTO "shoppingList"
+INSERT INTO "shoppinglist"
 	("item", "quantity", "unit")
 VALUES
 	('eric', '200', 'loaf'),
