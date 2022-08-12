@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 
@@ -21,6 +20,7 @@ function App() {
         axios({
             method: 'GET',
             url: '/list'
+
         }).then(response => {
             setShoppingList(response.data)
         }).catch(err => {
@@ -30,28 +30,11 @@ function App() {
 
     }
 
-    const newShoppingItem = () => {
-        axios({
-            method: 'POST',
-            url: '/list',
-            data: {
-                item: item,
-                quantity: quantity,
-                unit: unit
-            }
-        }).then( response => {
-            console.log(response);
-            getShoppingList();
-        }).catch( err => {
-            console.log(err);
-        })
-    }
-
 
     return (
         <div className="App">
             <Header />
-            <ShoppingForm />
+            <ShoppingForm getShoppingList={getShoppingList}/>
             <main>
                 <p>Under Construction...</p>
             </main>
