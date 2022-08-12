@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     // const here
     const newShoppingItem = [req.body.item, req.body.quantity, req.body.unit]
-    const queryText = `INSERT INTO shoppinglist VALUES ($1, $2, $3)`;
+    const queryText = `INSERT INTO shoppinglist (item, quantity, unit) VALUES ($1, $2, $3)`;
 
     pool.query(queryText, newShoppingItem)
         .then((result) => {
