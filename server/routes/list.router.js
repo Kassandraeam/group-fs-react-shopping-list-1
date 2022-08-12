@@ -7,7 +7,7 @@ const pool = require('../modules/pool');
 app.get('/', (req, res) => {
     // When you fetch all things in these GET routes, strongly encourage ORDER BY
     // so that things always come back in a consistent order 
-    const sqlText = `SELECT * FROM shoppingList ORDER BY item;`;
+    const sqlText = `SELECT * FROM shoppinglist ORDER BY item;`;
     pool.query(sqlText)
         .then((result) => {
             console.log(`Got stuff back from the database`, result);
@@ -30,6 +30,7 @@ app.post('/', (req, res) => {
             res.sendStatus(201);
         }).catch((error) => {
             console.log(`Error making database query`, error);
+            console.log(req.body);
             res.sendStatus(500);
         })
 })
