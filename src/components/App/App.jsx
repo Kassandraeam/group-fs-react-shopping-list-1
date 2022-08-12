@@ -29,6 +29,25 @@ function App() {
         })
 
     }
+
+    const newShoppingItem = () => {
+        axios({
+            method: 'POST',
+            url: '/list',
+            data: {
+                item: item,
+                quantity: quantity,
+                unit: unit
+            }
+        }).then( response => {
+            console.log(response);
+            getShoppingList();
+        }).catch( err => {
+            console.log(err);
+        })
+    }
+
+
     return (
         <div className="App">
             <Header />

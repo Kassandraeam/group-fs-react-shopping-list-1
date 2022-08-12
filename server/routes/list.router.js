@@ -16,4 +16,4 @@ app.post('/', (req, res) => {
         })
 })
 
-modules.export = app;
+module.exports = app;
