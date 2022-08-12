@@ -35,4 +35,16 @@ app.post('/', (req, res) => {
         })
 })
 
+app.delete( '/:id', (req, res) => {
+    const id = req.params.id;
+    const queryText = 'DELETE FROM shoppinglist WHERE id = $1';
+
+    pool.query(queryText, [id])
+        .then( response => {
+            res.sendStatus(204);
+        }).catch( err => {
+            console.log(log);
+        })
+})
+
 module.exports = app;
