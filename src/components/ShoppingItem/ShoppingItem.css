@@ -1,0 +1,5 @@
+.items {
+padding: 5px;    
+background-color: blue;
+border-style: solid, 5px, color black;
+}
