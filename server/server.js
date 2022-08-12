@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const { query } = require('express');
+//const { query } = require('express');
 const PORT = process.env.PORT || 5000;
 const list = require('./routes/list.router.js');
 
